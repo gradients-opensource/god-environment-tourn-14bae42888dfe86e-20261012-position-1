@@ -1,0 +1,25 @@
+# ============================================================================
+# Docker build-context excludes. IMPORTANT (env-tournament rule): NEVER ship a
+# training dataset inside the image — "Do not bundle your own dataset in the Docker
+# image." All SFT data is either generated at RUNTIME (scripts/envs/generate_trajectories.py,
+# inside the training window) or loaded from the validator's whitelisted MINER_DATASETS.
+# These paths are excluded from `COPY scripts ...` so no dataset can leak into the image.
+# ============================================================================
+scripts/envs/prebaked/
+scripts/datasets/
+**/data.json
+**/*.parquet
+
+# Build / cache / local artifacts — keep the image and build context lean.
+**/__pycache__/
+**/*.pyc
+scripts/outputs/
+scripts/wandb/
+scripts/last_run_prepared/
+scripts/mlruns/
+scripts/runs/
+
+# Local-only runtime dirs (downloaded datasets + checkpoints) — never part of the image.
+miner_datasets/
+secure_checkpoints/
+outputs/

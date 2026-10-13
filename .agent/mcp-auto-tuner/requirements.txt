@@ -1,0 +1,4 @@
+mcp
+pydantic
+wandb
+huggingface_hub

@@ -1,0 +1,34 @@
+{
+  "mcpServers": {
+    "AutoTuner_MasterText": {
+      "command": "python",
+      "args": [
+        "c:/Users/ASUS/Documents/commit/master-text/.agent/mcp-auto-tuner/server.py"
+      ],
+      "env": {
+        "HF_TOKEN": "ISI_DENGAN_TOKEN_WRITE_HUGGINGFACE_ANDA",
+        "WANDB_API_KEY": "ISI_DENGAN_API_KEY_WANDB_ANDA"
+      }
+    },
+    "BraveSearch": {
+      "command": "npx",
+      "args": [
+        "-y",
+        "@modelcontextprotocol/server-brave-search"
+      ],
+      "env": {
+        "BRAVE_API_KEY": "ISI_API_KEY_ANDA_DI_SINI"
+      }
+    },
+    "GitHub": {
+      "command": "npx",
+      "args": [
+        "-y",
+        "@modelcontextprotocol/server-github"
+      ],
+      "env": {
+        "GITHUB_PERSONAL_ACCESS_TOKEN": "ISI_TOKEN_CLASSIC_ANDA"
+      }
+    }
+  }
+}
